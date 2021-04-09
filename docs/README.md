@@ -2,40 +2,48 @@
 
 ## Problema
 
-### Sinal Teoria
+O problema lida com um sistema trifásico de linhas de tensão. A seguir foi feito um pequeno estudo sobre a teoria do sinal das linhas de tensão e sobre o sinal medido na prática.
 
-O sinal em um sistema trifasico de energia de transmissão um conjunto de três senoides. As senoides estão deslocadas em 120 graus. 
-A imagem a seguir ilustra o aspecto geral do problema. 
+### Sinal: Teoria
+
+O sinal em um sistema trifásico de energia de transmissão é um conjunto de três senoides. As senoides estão deslocadas em 120 graus. 
+A imagem a seguir ilustra o aspecto geral dos sinais do problema. 
 
 ![](./figures/sinal-teoria.png)
 
-### Sinal Prática
+A equação de cada um dos sinais é dada por:
 
-Um exemplo de sinal de uma linha em operação normal.
+```
+SinalFase0 = seno(2 * pi * (tempo + 0/3))
+SinalFase1 = seno(2 * pi * (tempo + 1/3))
+SinalFase2 = seno(2 * pi * (tempo + 2/3))
+```
 
-| Com 800000 dados                          | Com 800 dados (média móvel aplicada)   |
-|-------------------------------------------|----------------------------------------|
-| ![](./figures/Sinal800000-instance1.png)  | ![](./figures/Sinal800-instance1.png)  |
-| ![](./figures/Sinal800000-instance3.png)  | ![](./figures/Sinal800-instance3.png)  |
-| ![](./figures/Sinal800000-instance4.png)  | ![](./figures/Sinal800-instance4.png)  |
-| ![](./figures/Sinal800000-instance5.png)  | ![](./figures/Sinal800-instance5.png)  |
-| ![](./figures/Sinal800000-instance6.png)  | ![](./figures/Sinal800-instance6.png)  |
+### Sinal: Prática
 
-Um exemplo de sinal de uma linha em operação ruim.
+Um exemplo de sinal de uma linha de tensão em operação normal.
 
-| Com 800000 dados                          | Com 800 dados (média móvel aplicada)   |
-|-------------------------------------------|----------------------------------------|
-| ![](./figures/Sinal800000-instance2.png)  | ![](./figures/Sinal800-instance2.png)  |
-| ![](./figures/Sinal800000-instance68.png) | ![](./figures/Sinal800-instance68.png) |
-| ![](./figures/Sinal800000-instance77.png) | ![](./figures/Sinal800-instance77.png) |
-| ![](./figures/Sinal800000-instance91.png) | ![](./figures/Sinal800-instance91.png) |
-| ![](./figures/Sinal800000-instance94.png) | ![](./figures/Sinal800-instance94.png) |
+| Com 800000 dados                                      | Com 800 dados (média móvel aplicada)            |
+|-------------------------------------------------------|-------------------------------------------------|
+| ![](./figures/Sinal800000/Sinal800000-instance1.png)  | ![](./figures/Sinal800/Sinal800-instance1.png)  |
+| ![](./figures/Sinal800000/Sinal800000-instance3.png)  | ![](./figures/Sinal800/Sinal800-instance3.png)  |
+| ![](./figures/Sinal800000/Sinal800000-instance4.png)  | ![](./figures/Sinal800/Sinal800-instance4.png)  |
+| ![](./figures/Sinal800000/Sinal800000-instance5.png)  | ![](./figures/Sinal800/Sinal800-instance5.png)  |
+| ![](./figures/Sinal800000/Sinal800000-instance6.png)  | ![](./figures/Sinal800/Sinal800-instance6.png)  |
 
+Um exemplo de sinal de uma linha de tensão em operação ruim.
 
-
+| Com 800000 dados                                      | Com 800 dados (média móvel aplicada)            |
+|-------------------------------------------------------|-------------------------------------------------|
+| ![](./figures/Sinal800000/Sinal800000-instance2.png)  | ![](./figures/Sinal800/Sinal800-instance2.png)  |
+| ![](./figures/Sinal800000/Sinal800000-instance68.png) | ![](./figures/Sinal800/Sinal800-instance68.png) |
+| ![](./figures/Sinal800000/Sinal800000-instance77.png) | ![](./figures/Sinal800/Sinal800-instance77.png) |
+| ![](./figures/Sinal800000/Sinal800000-instance91.png) | ![](./figures/Sinal800/Sinal800-instance91.png) |
+| ![](./figures/Sinal800000/Sinal800000-instance94.png) | ![](./figures/Sinal800/Sinal800-instance94.png) |
 
 ## Teste de Correlação na Instancia 1: Normal
 
+```
 Teste Correlação de Pearson R:
     coeficiente da correlação R: -0.4885
     p-value reference (alpha): 0.0500
@@ -73,9 +81,11 @@ Teste Correlação de Spearman R:
     p-value: 0.0000
     Interpretação: Baixa probabilidade da correlação ser ao acaso
     Interpretação: Correlação moderada
+```
 
 ## Teste de Correlação na Instancia 2: Anormal
 
+```
 Teste Correlação de Pearson R:
     coeficiente da correlação R: -0.4911
     p-value reference (alpha): 0.0500
@@ -113,10 +123,11 @@ Teste Correlação de Spearman R:
     p-value: 0.0000
     Interpretação: Baixa probabilidade da correlação ser ao acaso
     Interpretação: Correlação moderada
-
+```
 
 ## Teste de Correlação na Instancia 94: Anormal
 
+```
 Teste Correlação de Pearson R:
     coeficiente da correlação R: -0.4305
     p-value reference (alpha): 0.0500
@@ -135,6 +146,7 @@ Teste Correlação de Pearson R:
     p-value: 0.0000
     Interpretação: Baixa probabilidade da correlação ser ao acaso
     Interpretação: Correlação moderada
+    
 Teste Correlação de Spearman R:
     coeficiente da correlação R: -0.4273
     p-value reference (alpha): 0.0500
@@ -153,10 +165,11 @@ Teste Correlação de Spearman R:
     p-value: 0.0000
     Interpretação: Baixa probabilidade da correlação ser ao acaso
     Interpretação: Correlação moderada
-
+```
 
 ## Teste de Correlação na Instancia 2: Anormal (Deslocado)
 
+```
 Teste Correlação de Pearson R:
     coeficiente da correlação R: 0.9963
     p-value reference (alpha): 0.0500
@@ -175,6 +188,7 @@ Teste Correlação de Pearson R:
     p-value: 0.0000
     Interpretação: Baixa probabilidade da correlação ser ao acaso
     Interpretação: Correlação muito forte
+    
 Teste Correlação de Spearman R:
     coeficiente da correlação R: 0.9921
     p-value reference (alpha): 0.0500
@@ -193,9 +207,11 @@ Teste Correlação de Spearman R:
     p-value: 0.0000
     Interpretação: Baixa probabilidade da correlação ser ao acaso
     Interpretação: Correlação muito forte
+```
 
 ## Teste de Correlação na Instancia 94: Anormal (Deslocado)
 
+```
 Teste Correlação de Pearson R:
     coeficiente da correlação R: 0.9551
     p-value reference (alpha): 0.0500
@@ -214,6 +230,7 @@ Teste Correlação de Pearson R:
     p-value: 0.0000
     Interpretação: Baixa probabilidade da correlação ser ao acaso
     Interpretação: Correlação muito forte
+    
 Teste Correlação de Spearman R:
     coeficiente da correlação R: 0.9610
     p-value reference (alpha): 0.0500
@@ -232,3 +249,4 @@ Teste Correlação de Spearman R:
     p-value: 0.0000
     Interpretação: Baixa probabilidade da correlação ser ao acaso
     Interpretação: Correlação muito forte
+```
