@@ -38,7 +38,7 @@ O enunciado completo do problema pode ser encontrado no [arquivo](./docs/prova_p
 
 A seguir temos um fluxograma geral da solução para esse desafio.
 
-![](./figures/fluxograma-geral-trabalho.png)
+![](./docs/figures/fluxograma-geral-trabalho.png)
 
 ## Dataset
 
