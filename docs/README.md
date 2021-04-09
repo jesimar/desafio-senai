@@ -19,9 +19,11 @@ SinalFase1 = seno(2 * pi * (tempo + 1/3))
 SinalFase2 = seno(2 * pi * (tempo + 2/3))
 ```
 
+:warning: **Nota:** o valor do sinal também deve ser multiplicado pela tensão máxima do dispositivo gerador.
+
 ### Sinal: Prática
 
-Um exemplo de sinal de uma linha de tensão em operação normal.
+**Sem descarga parcial:** A seguir são ilustrados alguns exemplos de sinais de uma linha de tensão em operação normal.
 
 | Com 800000 dados                                      | Com 800 dados (média móvel aplicada)            |
 |-------------------------------------------------------|-------------------------------------------------|
@@ -31,7 +33,7 @@ Um exemplo de sinal de uma linha de tensão em operação normal.
 | ![](./figures/Sinal800000/Sinal800000-instance5.png)  | ![](./figures/Sinal800/Sinal800-instance5.png)  |
 | ![](./figures/Sinal800000/Sinal800000-instance6.png)  | ![](./figures/Sinal800/Sinal800-instance6.png)  |
 
-Um exemplo de sinal de uma linha de tensão em operação ruim.
+**Com descarga parcial:** A seguir são ilustrados alguns exemplos de sinais de uma linha de tensão em operação ruim.
 
 | Com 800000 dados                                      | Com 800 dados (média móvel aplicada)            |
 |-------------------------------------------------------|-------------------------------------------------|
@@ -41,7 +43,34 @@ Um exemplo de sinal de uma linha de tensão em operação ruim.
 | ![](./figures/Sinal800000/Sinal800000-instance91.png) | ![](./figures/Sinal800/Sinal800-instance91.png) |
 | ![](./figures/Sinal800000/Sinal800000-instance94.png) | ![](./figures/Sinal800/Sinal800-instance94.png) |
 
-## Teste de Correlação na Instancia 1: Normal
+
+## Experimento Geração de Imagem a Partir do Sinal
+
+Um experimento de geração de uma imagem em RGB a partir das três fases foi feito.
+
+```
+RED = Phase0
+GREEN = Phase1
+BLUE = Phase2
+```
+
+Os valores das fases foram normalizados entre 0 a 255. Com limitações de máximo (40) e mínimo (-40). Valores que ultrapassaram esse limiar foram definidos como sendo a cor branca.
+
+| Sem descarga parcial                                      | Com descarga parcial                                       |
+|-----------------------------------------------------------|------------------------------------------------------------|
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-1.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-2.png)   |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-3.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-68.png)  |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-4.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-77.png)  |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-5.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-91.png)  |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-6.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-94.png)  |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-7.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-96.png)  |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-8.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-99.png)  |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-9.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-137.png) |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-10.png) | ![](./figures/imgs-maxmin-fixo-new/image-instance-145.png) |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-11.png) | ![](./figures/imgs-maxmin-fixo-new/image-instance-146.png) |
+| ![](./figures/imgs-maxmin-fixo-new/image-instance-12.png) | ![](./figures/imgs-maxmin-fixo-new/image-instance-153.png) |
+
+## Teste de Correlação na Instância 1: Normal
 
 ```
 Teste Correlação de Pearson R:
@@ -83,7 +112,7 @@ Teste Correlação de Spearman R:
     Interpretação: Correlação moderada
 ```
 
-## Teste de Correlação na Instancia 2: Anormal
+## Teste de Correlação na Instância 2: Anormal
 
 ```
 Teste Correlação de Pearson R:
@@ -125,7 +154,7 @@ Teste Correlação de Spearman R:
     Interpretação: Correlação moderada
 ```
 
-## Teste de Correlação na Instancia 94: Anormal
+## Teste de Correlação na Instância 94: Anormal
 
 ```
 Teste Correlação de Pearson R:
@@ -167,7 +196,7 @@ Teste Correlação de Spearman R:
     Interpretação: Correlação moderada
 ```
 
-## Teste de Correlação na Instancia 2: Anormal (Deslocado)
+## Teste de Correlação na Instância 2: Anormal (Deslocado)
 
 ```
 Teste Correlação de Pearson R:
@@ -209,7 +238,7 @@ Teste Correlação de Spearman R:
     Interpretação: Correlação muito forte
 ```
 
-## Teste de Correlação na Instancia 94: Anormal (Deslocado)
+## Teste de Correlação na Instância 94: Anormal (Deslocado)
 
 ```
 Teste Correlação de Pearson R:
