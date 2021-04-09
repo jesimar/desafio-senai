@@ -140,7 +140,7 @@ desafio-senai
 
 ## Resultados
 
-Alguns dos principais resultados produzidos podem ser encontradas [aqui](https://github.com/jesimar/desafio-senai/tree/main/docs/README.md)
+Alguns dos principais resultados produzidos podem ser encontradas [aqui](https://github.com/jesimar/desafio-senai/tree/main/docs)
 
 ## Limitações do Projeto
 
