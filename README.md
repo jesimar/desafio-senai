@@ -22,7 +22,7 @@ A organização desse projeto foi feita através da separação em diversos dire
 
 * **data** -> Pasta contendo um conjunto de arquivos de dados para treinamento, teste e avaliação do projeto. [[data](./data/)]
 * **docs** -> Pasta contendo a documentação do projeto desenvolvido. [[docs](./docs/)]
-* **models** -> Pasta contendo o modelo de aprendizado de máquina treinado. [[models](./models/)]
+* **models** -> Pasta contendo as features extraídas do arquivo de instância. [[models](./models/)]
 * **src** -> Pasta contendo os principais códigos-fonte do projeto. [[src](./src/)]
 * **test** -> Pasta contendo os arquivos de teste unitário de software. [[test](./test/)]
 
@@ -70,10 +70,10 @@ Após esse procedimento cerca de 167 arquivos de instâncias são criados com ap
 
 ## Como Executar o Projeto
 
-Para executar esse projeto faço seguinte. Primeiro entre na pasta [[examples](./examples/)] em seguida execute qualquer um dos arquivos .py presentes neste diretório. A seguir é apresentado um exemplo de comando para testar a biblioteca:
+Para executar esse projeto execute o comando a seguir:
 
 ```
-$ python example_train.py
+$ python ./src/code-ai.py
 ```
 
 ## Como Executar os Testes Unitários
@@ -94,17 +94,49 @@ python -m unittest test.test_basic.BasicTests.test_file_analysis_instance1
 
 * Não foi utilizado Container com Docker.
 
-## Arquivos de Entrada
+## Arquivos de Entrada com as Features
 
-Na pasta [[dataset](./dataset/)] encontra-se um conjunto de arquivos de entrada que podem ser utilizandos para testes. Esses arquivos estão no formato CSV e devem estar estruturados conforme a ilustração a seguir:
+Na pasta [[models](./models/)] encontra-se alguns arquivos de entrada com algumas features extraídas da base de dados. 
+Esses arquivos estão no formato CSV e nas linhas tem-se as instâncias e nas colunas tem-se as features extraídas do modelo. 
+A seguir tem-se uma imagem mostrando a estrutura geral desse arquivo.
 
-![](./figures/formato-csv.png)
-
-:warning: **OBS:** Arquivos que não estejam nessa especificação ainda não são suportados pela biblioteca.
+![](./docs/figures/formato-arquivo-features.png)
 
 ## Organização do Projeto
 
-Executar comando tree aqui.
+```
+desafio-senai
+├── data
+│   ├── database.csv
+│   ├── instances
+│   │   ├── instance-1.csv
+│   │   ├── instance-2.csv
+│   │   ├── instance-3.csv
+│   │   └── ...
+│   └── script-file-split.sh
+├── docs
+│   ├── analise-exploratoria-dos-dados.ods
+│   ├── figures
+│   │   ├── formato-arquivo-features.png
+│   │   ├── sinal-teoria.png
+│   │   └── ...
+│   ├── prova_pratica_p2_2021.pdf
+│   └── RESULTS.md
+├── models
+│   ├── model-features.csv
+│   ├── model-features2.csv
+│   └── ...
+├── src
+│   ├── __init__.py
+│   ├── code-ai.py
+│   └── code-eda.py
+├── test
+│   ├── __init__.py
+│   └── test_basic.py
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
 
 ## Resultados
 
