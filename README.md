@@ -78,10 +78,16 @@ $ python example_train.py
 
 ## Como Executar os Testes Unitários
 
-Para executar os testes unitários do projeto execute o seguinte comando:
+Foram criados alguns testes unitários. Para executar os testes unitários do projeto execute o seguinte comando:
 
 ```
 python -m unittest test.test_basic
+```
+
+Para executar apenas um teste específico execute o comando: 
+
+```
+python -m unittest test.test_basic.BasicTests.test_file_analysis_instance1
 ```
 
 ## Limitações do Projeto
