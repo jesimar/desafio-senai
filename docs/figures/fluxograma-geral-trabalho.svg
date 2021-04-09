@@ -7,16 +7,16 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="230.96724mm"
-   height="227.47353mm"
-   viewBox="0 0 230.96724 227.47353"
+   width="229.7988mm"
+   height="223.52733mm"
+   viewBox="0 0 229.7988 223.52733"
    version="1.1"
    id="svg8"
-   inkscape:version="1.0.2 (394de47547, 2021-03-26)"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
    sodipodi:docname="fluxograma-geral-trabalho.svg"
    inkscape:export-filename="/home/jesimar/Área de Trabalho/fluxograma-geral-trabalho.png"
-   inkscape:export-xdpi="87.989143"
-   inkscape:export-ydpi="87.989143">
+   inkscape:export-xdpi="88.425179"
+   inkscape:export-ydpi="88.425179">
   <defs
      id="defs2">
     <marker
@@ -272,6 +272,20 @@
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path3118-6-3-9" />
     </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Lend-7-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path1648-7-6" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -280,9 +294,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="321.99256"
-     inkscape:cy="440.49749"
+     inkscape:zoom="0.7"
+     inkscape:cx="-24.258171"
+     inkscape:cy="529.27919"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -295,7 +309,14 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     showguides="true"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="76.606991,201.46044"
+       orientation="0,-1"
+       id="guide149" />
+  </sodipodi:namedview>
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -312,16 +333,16 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(11.890427,-30.988626)">
+     transform="translate(10.721986,-32.708717)">
     <rect
-       style="fill:#ffd5d5;stroke:#ff0500;stroke-width:0"
+       style="fill:#ffffff;stroke:#ff0500;stroke-width:0"
        id="rect10"
-       width="230.96724"
-       height="227.47353"
-       x="-11.890427"
-       y="30.988626" />
+       width="229.7988"
+       height="223.52733"
+       x="-10.721986"
+       y="32.708717" />
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#ff9955;stroke:#ff0500;stroke-width:0"
        id="rect30"
        width="33.022118"
        height="21.838797"
@@ -344,7 +365,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan40">Dados</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#ff9955;stroke:#ff0500;stroke-width:0"
        id="rect30-3"
        width="33.022118"
        height="21.838797"
@@ -367,7 +388,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan40-5">os Dados</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#ff9955;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3"
        width="45.897972"
        height="21.838797"
@@ -395,7 +416,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan126">sub-instâncias</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#ff9955;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9"
        width="45.897972"
        height="21.838797"
@@ -420,16 +441,16 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:6.35px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="84.954895"
+       x="101.88824"
        y="39.62075"
        id="text34-6-9"><tspan
          sodipodi:role="line"
-         x="84.954895"
+         x="101.88824"
          y="39.62075"
          style="font-size:6.35px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan40-5-6">Pipeline da Solução</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#de8787;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0"
        width="42.588814"
        height="21.838797"
@@ -442,7 +463,7 @@
        y="88.358849"
        id="text34-6-5-1-6"><tspan
          sodipodi:role="line"
-         x="17.625124"
+         x="17.625122"
          y="88.358849"
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan173-6">Analisar as </tspan><tspan
@@ -457,7 +478,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan241">instâncias</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#d3bc5f;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1"
        width="44.691582"
        height="21.838797"
@@ -466,54 +487,26 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="131.10411"
+       x="128.98747"
        y="88.448181"
        id="text34-6-5-1-6-8"><tspan
          sodipodi:role="line"
-         x="131.10411"
+         x="128.98747"
          y="88.448181"
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan497">Definir </tspan><tspan
          sodipodi:role="line"
-         x="131.10411"
+         x="128.98747"
          y="95.503731"
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan501">features</tspan><tspan
          sodipodi:role="line"
-         x="131.10411"
+         x="128.98747"
          y="102.55928"
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan369">dos dados</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
-       id="rect30-3-3-9-0-1-0"
-       width="48.962616"
-       height="21.838797"
-       x="161.27283"
-       y="82.191887" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="185.11658"
-       y="88.132324"
-       id="text34-6-5-1-6-8-2"><tspan
-         sodipodi:role="line"
-         x="185.11658"
-         y="88.132324"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan286-5">Analisar </tspan><tspan
-         sodipodi:role="line"
-         x="185.11658"
-         y="95.187874"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan373">correlação entre</tspan><tspan
-         sodipodi:role="line"
-         x="185.11658"
-         y="102.24342"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan375">sinais</tspan></text>
-    <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#de8787;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1-0-9"
        width="48.962616"
        height="21.838797"
@@ -541,7 +534,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan362">sinais</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#d3bc5f;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1-0-97"
        width="53.838165"
        height="21.838797"
@@ -569,7 +562,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan419">estatísticas</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#d3bc5f;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1-0-97-9"
        width="53.838165"
        height="21.838797"
@@ -597,35 +590,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan459">interesse</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
-       id="rect30-3-3-9-0-1-0-97-9-7"
-       width="53.838165"
-       height="21.838797"
-       x="136.54285"
-       y="118.33438" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="164.09067"
-       y="124.27483"
-       id="text34-6-5-1-6-8-2-3-3-8"><tspan
-         sodipodi:role="line"
-         x="164.09067"
-         y="124.27483"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan286-5-6-1-4">Extrair as </tspan><tspan
-         sodipodi:role="line"
-         x="164.09067"
-         y="131.33038"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan419-4-5">features de </tspan><tspan
-         sodipodi:role="line"
-         x="164.09067"
-         y="138.38594"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan459-0">interesse</tspan></text>
-    <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#d3bc5f;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1-0-97-9-7-3"
        width="64.907951"
        height="21.838797"
@@ -653,7 +618,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan541">para treinar o modelo</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#aade87;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1-0-97-9-7-3-3"
        width="64.907951"
        height="21.838797"
@@ -676,30 +641,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan584">a ser utilizada</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
-       id="rect30-3-3-9-0-1-0-97-9-7-3-3-5"
-       width="64.907951"
-       height="21.838797"
-       x="140.86322"
-       y="158.377" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="173.17354"
-       y="168.02156"
-       id="text34-6-5-1-6-8-2-3-3-8-6-2-5"><tspan
-         sodipodi:role="line"
-         x="173.17354"
-         y="168.02156"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan541-1-4">Rede MLP </tspan><tspan
-         sodipodi:role="line"
-         x="173.17354"
-         y="175.07712"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan584-7">Selecionada</tspan></text>
-    <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#aade87;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1-0-97-9-7-3-3-5-6"
        width="64.907951"
        height="21.838797"
@@ -722,7 +664,7 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan584-7-9">com as features</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#aade87;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1-0-97-9-7-3-3-5-6-3"
        width="64.907951"
        height="21.838797"
@@ -745,77 +687,54 @@
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan692">a entrada</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
-       id="rect30-3-3-9-0-1-0-97-9-7-3-3-5-6-3-2"
-       width="64.907951"
-       height="21.838797"
-       x="141.25417"
-       y="194.36978" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="173.56448"
-       y="204.01434"
-       id="text34-6-5-1-6-8-2-3-3-8-6-2-5-5-7-5"><tspan
-         sodipodi:role="line"
-         x="173.56448"
-         y="204.01434"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan584-7-9-5-4">Balancear a base </tspan><tspan
-         sodipodi:role="line"
-         x="173.56448"
-         y="211.0699"
-         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
-         id="tspan730">de dados</tspan></text>
-    <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#afe9dd;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1-0-97-9-7-3-3-5-6-3-2-4"
        width="64.907951"
        height="21.838797"
-       x="19.281857"
-       y="231.01617" />
+       x="-2.9431412"
+       y="232.60365" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="51.592175"
-       y="240.66074"
+       x="29.367153"
+       y="242.24821"
        id="text34-6-5-1-6-8-2-3-3-8-6-2-5-5-7-5-4"><tspan
          sodipodi:role="line"
-         x="51.592175"
-         y="240.66074"
+         x="29.367153"
+         y="242.24821"
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan730-0">Treinar a rede</tspan><tspan
          sodipodi:role="line"
-         x="51.592175"
-         y="247.71629"
+         x="29.367153"
+         y="249.30377"
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan782">MLP</tspan></text>
     <rect
-       style="fill:#ff5555;stroke:#ff0500;stroke-width:0"
+       style="fill:#afe9dd;stroke:#ff0500;stroke-width:0"
        id="rect30-3-3-9-0-1-0-97-9-7-3-3-5-6-3-2-4-7"
        width="64.907951"
        height="21.838797"
-       x="96.048767"
-       y="231.02892" />
+       x="72.236244"
+       y="232.61639" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="128.35909"
-       y="240.67348"
+       x="104.54659"
+       y="242.26096"
        id="text34-6-5-1-6-8-2-3-3-8-6-2-5-5-7-5-4-8"><tspan
          sodipodi:role="line"
-         x="128.35909"
-         y="240.67348"
+         x="104.54659"
+         y="242.26096"
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan782-8">Avaliar o modelo</tspan><tspan
          sodipodi:role="line"
-         x="128.35909"
-         y="247.72903"
+         x="104.54659"
+         y="249.31651"
          style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
          id="tspan818">treinado</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="m 34.17256,54.064408 9.605634,0.259045"
+       d="m 34.36831,54.516565 9.605634,0.259045"
        id="path820" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-8)"
@@ -827,7 +746,7 @@
        id="path820-2" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-0)"
-       d="m 37.802968,92.448314 9.605634,0.259045"
+       d="m 37.210111,92.649168 9.605634,0.259045"
        id="path820-8" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-9)"
@@ -863,7 +782,7 @@
        id="path820-9" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-7)"
-       d="m 85.506807,241.71454 9.605631,0.25904"
+       d="m 61.694292,243.30205 9.605631,0.25904"
        id="path820-67" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3120)"
@@ -882,8 +801,138 @@
        d="m 204.74865,169.24241 h 7.12305 v 15.0647 H 25.997368 v 10.63996"
        id="path3110-5-9-1" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.233981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3120-3-6-2)"
-       d="m 204.47038,207.40247 h 6.20425 v 15.0647 H 48.776224 v 10.63996"
-       id="path3110-5-9-3" />
+       style="fill:none;stroke:#000000;stroke-width:0.22852;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3120-3-6-2)"
+       d="m 204.75661,207.40247 h 5.91802 v 15.0647 l -180.933674,0 0.0042,10.63996"
+       id="path3110-5-9-3"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#aade87;stroke:#ff0500;stroke-width:0"
+       id="rect30-3-3-9-0-1-0-97-9-7-3-3-5-6-3-2"
+       width="64.907951"
+       height="21.838797"
+       x="141.25417"
+       y="194.36978" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="173.56448"
+       y="204.01434"
+       id="text34-6-5-1-6-8-2-3-3-8-6-2-5-5-7-5"><tspan
+         sodipodi:role="line"
+         x="173.56448"
+         y="204.01434"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan584-7-9-5-4">Balancear a base </tspan><tspan
+         sodipodi:role="line"
+         x="173.56448"
+         y="211.0699"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan730">de dados</tspan></text>
+    <rect
+       style="fill:#aade87;stroke:#ff0500;stroke-width:0"
+       id="rect30-3-3-9-0-1-0-97-9-7-3-3-5"
+       width="64.907951"
+       height="21.838797"
+       x="140.86322"
+       y="158.377" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="173.17354"
+       y="168.02156"
+       id="text34-6-5-1-6-8-2-3-3-8-6-2-5"><tspan
+         sodipodi:role="line"
+         x="173.17354"
+         y="168.02156"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan541-1-4">Rede MLP </tspan><tspan
+         sodipodi:role="line"
+         x="173.17354"
+         y="175.07712"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan584-7">Selecionada</tspan></text>
+    <rect
+       style="fill:#d3bc5f;stroke:#ff0500;stroke-width:0"
+       id="rect30-3-3-9-0-1-0-97-9-7"
+       width="53.838165"
+       height="21.838797"
+       x="136.54285"
+       y="118.33438" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="164.09067"
+       y="124.27483"
+       id="text34-6-5-1-6-8-2-3-3-8"><tspan
+         sodipodi:role="line"
+         x="164.09067"
+         y="124.27483"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan286-5-6-1-4">Extrair as </tspan><tspan
+         sodipodi:role="line"
+         x="164.09067"
+         y="131.33038"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan419-4-5">features de </tspan><tspan
+         sodipodi:role="line"
+         x="164.09067"
+         y="138.38594"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan459-0">interesse</tspan></text>
+    <rect
+       style="fill:#d3bc5f;stroke:#ff0500;stroke-width:0"
+       id="rect30-3-3-9-0-1-0"
+       width="48.962616"
+       height="21.838797"
+       x="161.27283"
+       y="82.191887" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="185.11658"
+       y="88.132324"
+       id="text34-6-5-1-6-8-2"><tspan
+         sodipodi:role="line"
+         x="185.11658"
+         y="88.132324"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan286-5">Analisar </tspan><tspan
+         sodipodi:role="line"
+         x="185.11658"
+         y="95.187874"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan373">correlação entre</tspan><tspan
+         sodipodi:role="line"
+         x="185.11658"
+         y="102.24342"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan375">sinais</tspan></text>
+    <rect
+       style="fill:#c8b7b7;stroke:#ff0500;stroke-width:0"
+       id="rect30-3-3-9-0-1-0-97-9-7-3-3-5-6-3-2-4-7-7"
+       width="64.907951"
+       height="21.838797"
+       x="146.82954"
+       y="232.83411" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.64444px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="179.13989"
+       y="242.47867"
+       id="text34-6-5-1-6-8-2-3-3-8-6-2-5-5-7-5-4-8-5"><tspan
+         sodipodi:role="line"
+         x="179.13989"
+         y="242.47867"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan818-5">Reportar os </tspan><tspan
+         sodipodi:role="line"
+         x="179.13989"
+         y="249.53423"
+         style="font-size:5.64444px;text-align:center;text-anchor:middle;stroke-width:0.264583"
+         id="tspan186">resultados obtidos</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.264999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend-7-3)"
+       d="m 136.28759,243.51977 9.60563,0.25904"
+       id="path820-67-6" />
   </g>
 </svg>
