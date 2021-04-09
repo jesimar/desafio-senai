@@ -32,7 +32,7 @@ A organização desse projeto foi feita através da separação em diversos dire
 
 **Desenvolvimento:** Desenvolva um método de Aprendizado de Máquina que seja capaz de identificar a ocorrência ou não de descargas parciais. Desenvolva o pipeline completo de um projeto de Aprendizado de Máquina, desde a análise e preparação dos dados adquiridos até a disponibilização do algoritmo em Container (utilizando Docker) no GitHub.
 
-O enunciado completo do problema pode ser encontrado no [[arquivo](./docs/prova_pratica_p2_2021.pdf)].
+O enunciado completo do problema pode ser encontrado no [arquivo](./docs/prova_pratica_p2_2021.pdf).
 
 ## Dataset
 
@@ -46,9 +46,11 @@ Como forma de facilitar a manipulação de dados e o trabalho o `database.csv` f
 $ ./data/script-file-split.sh
 ```
 
-Após esse procedimento cerca de 167 arquivos de instâncias são criados com aproximadamente 7.5 MB cada.
+Após esse procedimento cerca de 167 arquivos de instâncias são criados com aproximadamente 7.5 MB cada. As instâncias criadas possue o seguinte padrão no nome `instance-n.csv`, onde n é o número da instância.
 
 :warning: **Nota:** As primeiras 800000 colunas da base de dados indicam a leitura da tensão nas linhas de energia. As últimas 3 colunas da base de dados representam respectivamente o ID do sinal, a fase e o target. No processamento do problema foram removidos as informações ID do sinal e a fase, pois eles não contribuem no problema. 
+
+## Organização Geral da Base de Dados
 
 | Atributo   | Instâncias em Condições de Operação Boas                | Instâncias em Condições de Operação Ruins        |
 |------------|---------------------------------------------------------|--------------------------------------------------|
@@ -57,16 +59,16 @@ Após esse procedimento cerca de 167 arquivos de instâncias são criados com ap
 
 ## Características do Problema
 
-- [x] Problema de classificação.
-- [x] Quantidade de classes 2. 
-- [x] Base de dados contém 167 instâncias diferentes.
-- [x] Cada instância possui 3 séries temporais (3 fases).
-- [x] Cada série temporal (fase) contém 800000 dados.
-- [x] Cada série temporal é uma onda senoide completa. 
-- [x] As fases estão deslocadas por 120 graus ou por 800000/3 leituras de dados. 
-- [x] Quantidade de dados sem descargas parciais (normal): 156. 
-- [x] Quantidade de dados com descargas parciais (anormal): 11. 
-- [x] Dataset desbalanceado.
+- [x] Problema de classificação
+- [x] Quantidade de classes 2
+- [x] Base de dados contém 167 instâncias diferentes
+- [x] Cada instância possui 3 séries temporais (3 fases)
+- [x] Cada série temporal (fase) contém 800000 dados
+- [x] Cada série temporal é uma onda senoide completa
+- [x] As fases estão deslocadas por 120 graus ou por 800000/3 leituras de dados
+- [x] Quantidade de dados sem descargas parciais (normal): 156
+- [x] Quantidade de dados com descargas parciais (anormal): 11
+- [x] Dataset desbalanceado
 
 ## Como Executar o Projeto
 
@@ -84,23 +86,21 @@ Foram criados alguns testes unitários. Para executar os testes unitários do pr
 python -m unittest test.test_basic
 ```
 
-Para executar apenas um teste específico execute o comando: 
+Para executar apenas um teste específico um comando semelhante ao abaixo: 
 
 ```
 python -m unittest test.test_basic.BasicTests.test_file_analysis_instance1
 ```
 
-## Limitações do Projeto
-
-* Não foi utilizado Container com Docker.
-
 ## Arquivos de Entrada com as Features
 
-Na pasta [[models](./models/)] encontra-se alguns arquivos de entrada com algumas features extraídas da base de dados. 
-Esses arquivos estão no formato CSV e nas linhas tem-se as instâncias e nas colunas tem-se as features extraídas do modelo. 
-A seguir tem-se uma imagem mostrando a estrutura geral desse arquivo.
+Na pasta [models](./models/) encontra-se alguns arquivos de entrada com algumas features extraídas da base de dados. 
+Esses arquivos estão no formato CSV, em que nas linhas tem-se as instâncias e nas colunas tem-se as features extraídas do modelo. 
+A seguir é mostrada uma imagem com a estrutura geral desse arquivo.
 
 ![](./docs/figures/formato-arquivo-features.png)
+
+Durante a Análise Exploratória dos Dados foram capturadas cerca de 40 features de forma serem utilizadas no treinamento do modelo de aprendizado de máquina.
 
 ## Organização do Projeto
 
@@ -152,3 +152,7 @@ tail -n 1 database.csv > linha500.csv
 tr ',' '\n' < linha1.csv > coluna1.csv
 tail -n 800003 coluna1.csv > coluna1n.csv
 ```
+
+## Limitações do Projeto
+
+* Não foi utilizado Container com Docker.
