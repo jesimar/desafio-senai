@@ -6,79 +6,24 @@ Created on Thu Apr  8 10:30:10 2021
 @author: Jesimar da Silva Arantes
 @email: jesimar.arantes@gmail.com
 
-Código para fazer a desenvolver o modelo de Aprendizado de Máquina.
+Código do modelo de Aprendizado de Máquina Multi-Layer Perceptron (MLP).
 
 """
 
-import warnings
-
 import os
-import numpy as np
+import random
+#import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from sklearn.datasets import fetch_openml
-from sklearn.exceptions import ConvergenceWarning
+#import matplotlib.pyplot as plt
 from sklearn.neural_network import MLPClassifier
 
-def classifcador_rna_simples():
-    X = [[0., 0.], [1., 1.]]
-    y = [0, 1]
-    clf = MLPClassifier(solver='lbfgs', alpha=1e-5,
-                        hidden_layer_sizes=(5, 2), random_state=1)
-    print(clf.fit(X, y))
-    new_instance = [[2., 2.], [-1., -2.]]
-    print(clf.predict([new_instance[0]]))
-    print([coef.shape for coef in clf.coefs_])
-
-#Exemplo retirado de: https://scikit-learn.org/stable/auto_examples/neural_networks/plot_mnist_filters.html#sphx-glr-auto-examples-neural-networks-plot-mnist-filters-py
-def example_mnist():
-    # Load data from https://www.openml.org/d/554
-    X, y = fetch_openml('mnist_784', version=1, return_X_y=True)
-    X = X / 255.
-    
-    # rescale the data, use the traditional train/test split
-    X_train, X_test = X[:60000], X[60000:]
-    y_train, y_test = y[:60000], y[60000:]
-    
-    #print(X_train)
-    #print(y_train)
-    #print(X_test)
-    #print(y_test)
-    #print(len(X_train))
-    #print(len(X_train[0]))
-    
-    mlp = MLPClassifier(hidden_layer_sizes=(50,), max_iter=10, alpha=1e-4,
-                        solver='sgd', verbose=10, random_state=1,
-                        learning_rate_init=.1)
-    
-    # this example won't converge because of CI's time constraints, so we catch the
-    # warning and are ignore it here
-    with warnings.catch_warnings():
-        warnings.filterwarnings("ignore", category=ConvergenceWarning,
-                                module="sklearn")
-        mlp.fit(X_train, y_train)
-    
-    print("Training set score: %f" % mlp.score(X_train, y_train))
-    print("Test set score: %f" % mlp.score(X_test, y_test))
-    print([coef for coef in mlp.coefs_])
-
-    fig, axes = plt.subplots(4, 4)
-    # use global min / max to ensure all weights are shown on the same scale
-    vmin, vmax = mlp.coefs_[0].min(), mlp.coefs_[0].max()
-    for coef, ax in zip(mlp.coefs_[0].T, axes.ravel()):
-        ax.matshow(coef.reshape(28, 28), cmap=plt.cm.gray, vmin=.5 * vmin,
-                   vmax=.5 * vmax)
-        ax.set_xticks(())
-        ax.set_yticks(())
-    plt.show()
-
-def mlp_problema_linhas_tensao():
+def mlp_for_voltage_lines_problem(file_model):
     if os.getcwd().endswith('/src'):
         os.chdir('..')
-    df = pd.read_csv(os.path.join('models', 'model-features2.csv'), sep=';')
-    size_train = 90
-    size_test = 30
-    size_validation = 167 - size_train - size_test
+    
+    df = pd.read_csv(file_model, sep=';')
+    size_train = 100
+    size_test = 67
     vx = []
     vy = []
     for i in range(size_train + size_test):
@@ -87,77 +32,82 @@ def mlp_problema_linhas_tensao():
         vx.append(instance)
         vy.append(target)
     X = pd.DataFrame(vx)
+    
+    #normalização da base das instâncias de entrada
+    X = (X - X.min()) / (X.max() - X.min())
     y = pd.DataFrame(vy)
-    #print(X)
-    #print(y)
+    
     X_train, X_test = X[:size_train], X[size_train:]
     y_train, y_test = y[:size_train], y[size_train:]
+    
+    #balanceamento da base de dados
+    list_anormal = [1, 67, 76, 90, 93, 95, 98]
+    for i in range(86): #100 = 93 normal    e 7 anormal    -> 186 dados de treinamento
+        index = list_anormal[i % len(list_anormal)]
+        df2 = pd.DataFrame(X_train.values[index]).transpose()
+        dfy2 = pd.DataFrame(y_train.values[index]).transpose()
+        X_train = X_train.append(df2)
+        y_train = y_train.append(dfy2)
+    
+    #reordenação da base de treinamento para que fiquem aleatorios as instâncias normais e anormais
+    for i in range(186):
+        index1 = random.randint(0, 185)
+        index2 = random.randint(0, 185)
+        ndf1, ndf2 = X_train.iloc[index1], X_train.iloc[index2]
+        X_train.iloc[index1], X_train.iloc[index2] = ndf2, ndf1        
+        ndfy1, ndfy2 = y_train.iloc[index1], y_train.iloc[index2]
+        y_train.iloc[index1], y_train.iloc[index2] = ndfy2, ndfy1
+    
     X_train = X_train.to_numpy()
     X_test = X_test.to_numpy()
     y_train = y_train.transpose().values[0]
-    y_test = y_test.transpose().values[0]
+    y_test = y_test.transpose().values[0]    
     
-    #print(X_train)
-    #print(y_train)
-    #print(X_test)
-    #print(y_test)
     
-    #print('treinamento')
-    #print(len(X_train))
-    #print(len(X_train[0]))
+    mlp = MLPClassifier(hidden_layer_sizes=(5, ), max_iter=1000, alpha=1e-3,
+                        solver='sgd', verbose=1, random_state=1, learning_rate_init=0.1)
     
-    #print('teste')
-    #print(len(X_test))
-    #print(len(X_test[0]))
+    mlp.fit(X_train, y_train)
+    score_train = mlp.score(X_train, y_train)
+    score_test = mlp.score(X_test, y_test)
+    print('Acurácia no treinamento (score): {}'.format(score_train))
+    print('Acurácia no teste (score): {}'.format(score_test))
     
-    mlp = MLPClassifier(hidden_layer_sizes=(2,), max_iter=100, alpha=1e-5,
-                        solver='sgd', verbose=10, random_state=1,
-                        learning_rate_init=.01)
-    
-    with warnings.catch_warnings():
-        warnings.filterwarnings("ignore", category=ConvergenceWarning,
-                                module="sklearn")
-        mlp.fit(X_train, y_train)
-    
-    print("Training set score: %f" % mlp.score(X_train, y_train))
-    print("Test set score: %f" % mlp.score(X_test, y_test))
-    #print([coef for coef in mlp.coefs_])
-    
-    nvx = []
-    nvy = []
-    for i in range(size_train + size_test, 167):
-        instance = df.values[i][1:-1]
-        target = df.values[i][len(df.values[0])-1]
-        nvx.append(instance)
-        nvy.append(target)
-    X_validation = pd.DataFrame(nvx)
-    y_validation = pd.DataFrame(nvy)
-    #print(X_validation)
-    #print(y_validation)
-    X_validation = X_validation.to_numpy()
-    y_validation = y_validation.transpose().values[0]
-    count_acertos = 0
-    count_erros = 0
-    for i in range(size_validation):
-        #print(X_validation[i])
-        #print(y_validation[i])
-        vpredito = mlp.predict([X_validation[i]])
-        if y_validation[i] == vpredito[0]:
-            count_acertos += 1
+    size_train = 186
+    list_anormal_test = [136, 144, 145, 152]
+    count_hits = 0
+    count_errors = 0
+    y_pred = []
+    vp = 0
+    fp = 0
+    vn = 0
+    fn = 0
+    for i in range(size_test):
+        vpredito = mlp.predict([X_test[i]])
+        y_pred.append(vpredito[0])
+        if y_test[i] == vpredito[0]:
+            count_hits += 1
+            if y_test[i] == 1:
+                vp += 1
+                #print('instance-{}.csv -> acertou defeito'.format(100 + i + 1))
+            else:
+                vn += 1
+                #print('instance-{}.csv -> acertou normalidade'.format(100 + i + 1))
         else:
-            count_erros += 1
-            print('instance-{}.csv'.format(i+size_train+size_test+1))
-            print('     errou')
-        #print()
-    print('quantidade de acertos: {}'.format(count_acertos))
-    print('quantidade de erros: {}'.format(count_erros))
-    #mlp = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(5, 2))
-        
+            count_errors += 1
+            if y_test[i] == 1:
+                fn += 1
+                #print('instance-{}.csv -> errou defeito'.format(100 + i + 1))
+            else:
+                fp += 1
+                #print('instance-{}.csv -> errou normalidade'.format(100 + i + 1))
+    print('VP: {}'.format(vp))
+    print('VN: {}'.format(vn))
+    print('FP: {}'.format(fp))
+    print('FN: {}'.format(fn))
+    print('Quantidade total de acertos: {}'.format(count_hits))
+    print('quantidade total de erros: {}'.format(count_errors))
     
 # ============= Experimentos do Modelo de Aprendizado de Máquina =============
 
-#classifcador_rna_simples()
-#example_mnist()
-
-mlp_problema_linhas_tensao()
-
+mlp_for_voltage_lines_problem(os.path.join('models', 'model-features.csv'))

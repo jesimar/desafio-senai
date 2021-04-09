@@ -1,6 +1,8 @@
 # Resultados Obtidos
 
-## Problema
+A seguir são apresentados alguns resultados obtidos no decorrer do desafio.
+
+## Problema Breve Descrição
 
 O problema lida com um sistema trifásico de linhas de tensão. A seguir foi feito um pequeno estudo sobre a teoria do sinal das linhas de tensão e sobre o sinal medido na prática.
 
@@ -25,28 +27,27 @@ SinalFase2 = seno(2 * pi * (tempo + 2/3))
 
 **Sem descarga parcial:** A seguir são ilustrados alguns exemplos de sinais de uma linha de tensão em operação normal.
 
-| Com 800000 dados                                      | Com 800 dados (média móvel aplicada)            |
-|-------------------------------------------------------|-------------------------------------------------|
-| ![](./figures/Sinal800000/Sinal800000-instance1.png)  | ![](./figures/Sinal800/Sinal800-instance1.png)  |
-| ![](./figures/Sinal800000/Sinal800000-instance3.png)  | ![](./figures/Sinal800/Sinal800-instance3.png)  |
-| ![](./figures/Sinal800000/Sinal800000-instance4.png)  | ![](./figures/Sinal800/Sinal800-instance4.png)  |
-| ![](./figures/Sinal800000/Sinal800000-instance5.png)  | ![](./figures/Sinal800/Sinal800-instance5.png)  |
-| ![](./figures/Sinal800000/Sinal800000-instance6.png)  | ![](./figures/Sinal800/Sinal800-instance6.png)  |
+| Instância | Com 800000 dados                                      | Com 800 dados (média móvel aplicada)            |
+|-----------|-------------------------------------------------------|-------------------------------------------------|
+| inst1.csv | ![](./figures/Sinal800000/Sinal800000-instance1.png)  | ![](./figures/Sinal800/Sinal800-instance1.png)  |
+| inst3.csv | ![](./figures/Sinal800000/Sinal800000-instance3.png)  | ![](./figures/Sinal800/Sinal800-instance3.png)  |
+| inst4.csv | ![](./figures/Sinal800000/Sinal800000-instance4.png)  | ![](./figures/Sinal800/Sinal800-instance4.png)  |
+| inst5.csv | ![](./figures/Sinal800000/Sinal800000-instance5.png)  | ![](./figures/Sinal800/Sinal800-instance5.png)  |
+| inst6.csv | ![](./figures/Sinal800000/Sinal800000-instance6.png)  | ![](./figures/Sinal800/Sinal800-instance6.png)  |
 
 **Com descarga parcial:** A seguir são ilustrados alguns exemplos de sinais de uma linha de tensão em operação ruim.
 
-| Com 800000 dados                                      | Com 800 dados (média móvel aplicada)            |
-|-------------------------------------------------------|-------------------------------------------------|
-| ![](./figures/Sinal800000/Sinal800000-instance2.png)  | ![](./figures/Sinal800/Sinal800-instance2.png)  |
-| ![](./figures/Sinal800000/Sinal800000-instance68.png) | ![](./figures/Sinal800/Sinal800-instance68.png) |
-| ![](./figures/Sinal800000/Sinal800000-instance77.png) | ![](./figures/Sinal800/Sinal800-instance77.png) |
-| ![](./figures/Sinal800000/Sinal800000-instance91.png) | ![](./figures/Sinal800/Sinal800-instance91.png) |
-| ![](./figures/Sinal800000/Sinal800000-instance94.png) | ![](./figures/Sinal800/Sinal800-instance94.png) |
+| Instância  | Com 800000 dados                                      | Com 800 dados (média móvel aplicada)            |
+|------------|-------------------------------------------------------|-------------------------------------------------|
+| inst2.csv  | ![](./figures/Sinal800000/Sinal800000-instance2.png)  | ![](./figures/Sinal800/Sinal800-instance2.png)  |
+| inst68.csv | ![](./figures/Sinal800000/Sinal800000-instance68.png) | ![](./figures/Sinal800/Sinal800-instance68.png) |
+| inst77.csv | ![](./figures/Sinal800000/Sinal800000-instance77.png) | ![](./figures/Sinal800/Sinal800-instance77.png) |
+| inst91.csv | ![](./figures/Sinal800000/Sinal800000-instance91.png) | ![](./figures/Sinal800/Sinal800-instance91.png) |
+| inst94.csv | ![](./figures/Sinal800000/Sinal800000-instance94.png) | ![](./figures/Sinal800/Sinal800-instance94.png) |
 
+## Geração de Imagem a Partir do Sinal
 
-## Experimento Geração de Imagem a Partir do Sinal
-
-Um experimento de geração de uma imagem em RGB a partir das três fases foi feito.
+Um experimento de geração de uma imagem em RGB a partir das três fases foi feito. Para isso um mapeamento das fases para o canal de cores foi criado.
 
 ```
 RED = Phase0
@@ -54,21 +55,23 @@ GREEN = Phase1
 BLUE = Phase2
 ```
 
-Os valores das fases foram normalizados entre 0 a 255. Com limitações de máximo (40) e mínimo (-40). Valores que ultrapassaram esse limiar foram definidos como sendo a cor branca.
+Os valores das fases foram normalizados entre 0 a 255. Com limitações de máximo (40) e mínimo (-40). Os valores que ultrapassaram esse limiar foram definidos como sendo a cor branca. Veja o esquema sobre essa transformação de sinal em imagem a seguir.
 
-| Sem descarga parcial                                      | Com descarga parcial                                       |
-|-----------------------------------------------------------|------------------------------------------------------------|
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-1.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-2.png)   |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-3.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-68.png)  |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-4.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-77.png)  |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-5.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-91.png)  |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-6.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-94.png)  |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-7.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-96.png)  |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-8.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-99.png)  |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-9.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-137.png) |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-10.png) | ![](./figures/imgs-maxmin-fixo-new/image-instance-145.png) |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-11.png) | ![](./figures/imgs-maxmin-fixo-new/image-instance-146.png) |
-| ![](./figures/imgs-maxmin-fixo-new/image-instance-12.png) | ![](./figures/imgs-maxmin-fixo-new/image-instance-153.png) |
+![](./figures/esquema-fases-para-image.png)
+
+| Instância | Sem descarga parcial                                      | Com descarga parcial                                       |
+|-----------|-----------------------------------------------------------|------------------------------------------------------------|
+| [1 e 2]   | ![](./figures/imgs-maxmin-fixo-new/image-instance-1.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-2.png)   |
+| [3 e 68]  | ![](./figures/imgs-maxmin-fixo-new/image-instance-3.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-68.png)  |
+| [4 e 77]  | ![](./figures/imgs-maxmin-fixo-new/image-instance-4.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-77.png)  |
+| [5 e 91]  | ![](./figures/imgs-maxmin-fixo-new/image-instance-5.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-91.png)  |
+| [6 e 94]  | ![](./figures/imgs-maxmin-fixo-new/image-instance-6.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-94.png)  |
+| [7 e 96]  | ![](./figures/imgs-maxmin-fixo-new/image-instance-7.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-96.png)  |
+| [8 e 99]  | ![](./figures/imgs-maxmin-fixo-new/image-instance-8.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-99.png)  |
+| [9 e 137] | ![](./figures/imgs-maxmin-fixo-new/image-instance-9.png)  | ![](./figures/imgs-maxmin-fixo-new/image-instance-137.png) |
+| [10 e 145]| ![](./figures/imgs-maxmin-fixo-new/image-instance-10.png) | ![](./figures/imgs-maxmin-fixo-new/image-instance-145.png) |
+| [11 e 146]| ![](./figures/imgs-maxmin-fixo-new/image-instance-11.png) | ![](./figures/imgs-maxmin-fixo-new/image-instance-146.png) |
+| [12 e 153]| ![](./figures/imgs-maxmin-fixo-new/image-instance-12.png) | ![](./figures/imgs-maxmin-fixo-new/image-instance-153.png) |
 
 ## Teste de Correlação na Instância 1: Normal
 

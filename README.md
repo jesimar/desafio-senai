@@ -140,7 +140,11 @@ desafio-senai
 
 ## Resultados
 
-Alguns dos principais resultados produzidos podem ser encontradas [aqui](https://github.com/jesimar/desafio-senai/docs/blob/master/RESULTS.md)
+Alguns dos principais resultados produzidos podem ser encontradas [aqui](https://github.com/jesimar/desafio-senai/tree/main/docs/README.md)
+
+## Limitações do Projeto
+
+* Não foi utilizado Container com Docker.
 
 ## Alguns Comandos Úteis
 
@@ -152,7 +156,3 @@ tail -n 1 database.csv > linha500.csv
 tr ',' '\n' < linha1.csv > coluna1.csv
 tail -n 800003 coluna1.csv > coluna1n.csv
 ```
-
-## Limitações do Projeto
-
-* Não foi utilizado Container com Docker.

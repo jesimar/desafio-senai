@@ -129,8 +129,10 @@ dmypy.json
 .pyre/
 
 
-
-
-
-# database
-/data
+# database ignoradas, pois são muito grandes
+/data/instances
+/data/instances-features
+/data/instances-moving-average-1000
+/data/instances-moving-average-8000
+/data/instances-simplificadas
+/data/database.csv
