@@ -34,6 +34,12 @@ A organização desse projeto foi feita através da separação em diversos dire
 
 O enunciado completo do problema pode ser encontrado no [arquivo](./docs/prova_pratica_p2_2021.pdf).
 
+## Fluxograma Geral da Solução do Trabalho
+
+A seguir temos um fluxograma geral da solução para esse desafio.
+
+![](./figures/fluxograma-geral-trabalho.png)
+
 ## Dataset
 
 Para executar o projeto é necessário baixar o dataset no [link](https://drive.google.com/u/0/uc?id=17LPP_ZZprHIG3R2f0Vhg5CyfFZOMvlia&export=download) e colocar o arquivo (`database.csv`) na pasta [data](./data/). 
@@ -121,10 +127,10 @@ desafio-senai
 │   │   ├── sinal-teoria.png
 │   │   └── ...
 │   ├── prova_pratica_p2_2021.pdf
-│   └── RESULTS.md
+│   └── README.md
 ├── models
 │   ├── model-features.csv
-│   ├── model-features2.csv
+│   ├── model-features-simples.csv
 │   └── ...
 ├── src
 │   ├── __init__.py
