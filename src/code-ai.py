@@ -12,15 +12,15 @@ Código do modelo de Aprendizado de Máquina Multi-Layer Perceptron (MLP).
 
 import os
 import random
-#import numpy as np
 import pandas as pd
 #import matplotlib.pyplot as plt
 from sklearn.neural_network import MLPClassifier
 
-def mlp_for_voltage_lines_problem(file_model):
+def mlp_for_voltage_lines_problem(file_model, debug=False):
     if os.getcwd().endswith('/src'):
         os.chdir('..')
     
+    #leitura do arquivo com as features das instâncias
     df = pd.read_csv(file_model, sep=';')
     size_train = 100
     size_test = 67
@@ -32,60 +32,59 @@ def mlp_for_voltage_lines_problem(file_model):
         vx.append(instance)
         vy.append(target)
     X = pd.DataFrame(vx)
+    y = pd.DataFrame(vy)
     
     #normalização da base das instâncias de entrada
     X = (X - X.min()) / (X.max() - X.min())
-    y = pd.DataFrame(vy)
     
+    #separação das instâncias em conjunto de treinamento e teste
     X_train, X_test = X[:size_train], X[size_train:]
     y_train, y_test = y[:size_train], y[size_train:]
     
     #balanceamento da base de dados
-    list_anormal = [1, 67, 76, 90, 93, 95, 98]
-    for i in range(86): #100 = 93 normal    e 7 anormal    -> 186 dados de treinamento
-        index = list_anormal[i % len(list_anormal)]
-        df2 = pd.DataFrame(X_train.values[index]).transpose()
-        dfy2 = pd.DataFrame(y_train.values[index]).transpose()
-        X_train = X_train.append(df2)
-        y_train = y_train.append(dfy2)
+    #Existem 100 instâncias para treinamento onde 93 normal e 7 anormal
+    #O objetivo aqui é ter 186 instâncias para treinamento onde 93 são normais e 93 são anormais
+    #A extratégia para isso foi a replicação dos dados anormais na base de dados.
+    list_anormal_train = [1, 67, 76, 90, 93, 95, 98]
+    size_data_duplicated = 86
+    for i in range(size_data_duplicated):
+        index = list_anormal_train[i % len(list_anormal_train)]
+        new_dfx = pd.DataFrame(X_train.values[index]).transpose()
+        new_dfy = pd.DataFrame(y_train.values[index]).transpose()
+        X_train = X_train.append(new_dfx)
+        y_train = y_train.append(new_dfy)
     
     #reordenação da base de treinamento para que fiquem aleatorios as instâncias normais e anormais
-    for i in range(186):
-        index1 = random.randint(0, 185)
-        index2 = random.randint(0, 185)
-        ndf1, ndf2 = X_train.iloc[index1], X_train.iloc[index2]
-        X_train.iloc[index1], X_train.iloc[index2] = ndf2, ndf1        
-        ndfy1, ndfy2 = y_train.iloc[index1], y_train.iloc[index2]
-        y_train.iloc[index1], y_train.iloc[index2] = ndfy2, ndfy1
+    for i in range(size_train + size_data_duplicated):
+        index1 = random.randint(0, size_train + size_data_duplicated - 1)
+        index2 = random.randint(0, size_train + size_data_duplicated - 1)
+        newdf_x1, newdf_x2 = X_train.iloc[index1], X_train.iloc[index2]
+        X_train.iloc[index1], X_train.iloc[index2] = newdf_x2, newdf_x1
+        newdf_y1, newdf_y2 = y_train.iloc[index1], y_train.iloc[index2]
+        y_train.iloc[index1], y_train.iloc[index2] = newdf_y2, newdf_y1
     
     X_train = X_train.to_numpy()
     X_test = X_test.to_numpy()
     y_train = y_train.transpose().values[0]
     y_test = y_test.transpose().values[0]    
     
-    
+    #criação da rede MLP
     mlp = MLPClassifier(hidden_layer_sizes=(5, ), max_iter=1000, alpha=1e-3,
-                        solver='sgd', verbose=1, random_state=1, learning_rate_init=0.1)
-    
+                        solver='sgd', verbose=0, random_state=1, learning_rate_init=0.1)
+    #verbose=1
     mlp.fit(X_train, y_train)
-    score_train = mlp.score(X_train, y_train)
-    score_test = mlp.score(X_test, y_test)
-    print('Acurácia no treinamento (score): {}'.format(score_train))
-    print('Acurácia no teste (score): {}'.format(score_test))
     
-    size_train = 186
-    list_anormal_test = [136, 144, 145, 152]
+    # analisa o modelo treinado
     count_hits = 0
     count_errors = 0
-    y_pred = []
     vp = 0
     fp = 0
     vn = 0
     fn = 0
+    #list_anormal_test = [136, 144, 145, 152]
     for i in range(size_test):
-        vpredito = mlp.predict([X_test[i]])
-        y_pred.append(vpredito[0])
-        if y_test[i] == vpredito[0]:
+        vpredicted = mlp.predict([X_test[i]])
+        if y_test[i] == vpredicted[0]:
             count_hits += 1
             if y_test[i] == 1:
                 vp += 1
@@ -101,13 +100,44 @@ def mlp_for_voltage_lines_problem(file_model):
             else:
                 fp += 1
                 #print('instance-{}.csv -> errou normalidade'.format(100 + i + 1))
-    print('VP: {}'.format(vp))
-    print('VN: {}'.format(vn))
-    print('FP: {}'.format(fp))
-    print('FN: {}'.format(fn))
-    print('Quantidade total de acertos: {}'.format(count_hits))
-    print('quantidade total de erros: {}'.format(count_errors))
+    score_train = mlp.score(X_train, y_train)
+    score_test = mlp.score(X_test, y_test)
+    if debug:
+        print('Acurácia no treinamento (score): {}'.format(score_train))
+        print('Acurácia no teste (score): {}'.format(score_test))
+        print('Quantidade total de acertos: {}'.format(count_hits))
+        print('quantidade total de erros: {}'.format(count_errors))
+        print('VP: {}'.format(vp))
+        print('VN: {}'.format(vn))
+        print('FP: {}'.format(fp))
+        print('FN: {}'.format(fn))
+    else:
+        print('{};{};{};{};{};{};{};{}'.format(score_train, score_test, 
+                                               count_hits, count_errors, 
+                                               vp, vn, fp, fn))
     
+def experiment_simple():
+    print('{};{};{};{};{};{};{};{}'.format('score_train', 'score_test', 
+                                           'count_hits', 'count_errors', 
+                                           'vp', 'vn', 'fp', 'fn'))
+    mlp_for_voltage_lines_problem(os.path.join('models', 'model-features.csv'))
+    
+def experiment_validation1():
+    print('{};{};{};{};{};{};{};{}'.format('score_train', 'score_test', 
+                                           'count_hits', 'count_errors', 
+                                           'vp', 'vn', 'fp', 'fn'))
+    for i in range(100):
+        mlp_for_voltage_lines_problem(os.path.join('models', 'model-features.csv'))
+
+def experiment_validation2():
+    print('{};{};{};{};{};{};{};{}'.format('score_train', 'score_test', 
+                                           'count_hits', 'count_errors', 
+                                           'vp', 'vn', 'fp', 'fn'))
+    for i in range(100):
+        mlp_for_voltage_lines_problem(os.path.join('models', 'model-features-simples.csv'))
+
 # ============= Experimentos do Modelo de Aprendizado de Máquina =============
 
-mlp_for_voltage_lines_problem(os.path.join('models', 'model-features.csv'))
+experiment_simple()
+#experiment_validation1()
+#experiment_validation2()

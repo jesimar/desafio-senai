@@ -382,14 +382,13 @@ def experiment_stats_extraction_of_timeseries():
     stats_extraction_of_timeseries(path, 'instance-94.csv')
 
 def print_hearder():
-    formatter_header = '{};' * 41 + '{}'
+    formatter_header = '{};' * 38 + '{}'
     print(formatter_header.format('instance', 'mean_sum', 'mean_sum_abs', 'mean_sum2',
                                   'rms_sum', 'rms_sum_abs', 'rms_sum2', 
                                   'std_sum', 'std_sum_abs', 'std_sum2',
                                   'kurtosis_sum', 'kurtosis_sum_abs', 'kurtosis_sum2',
                                   'skew_sum', 'skew_sum_abs', 'skew_sum2',
-                                  'min_sum', 'min_sum_abs', 'min_sum2',
-                                  'max_sum', 'max_sum_abs', 'max_sum2',
+                                  'min_sum', 'min_sum2', 'max_sum2',
                                   'intensity', 'cont', 'intensity_quad', 'cont_quad',
                                   'rms_phase0', 'rms_phase1', 'rms_phase2',
                                   'std_phase0', 'std_phase1', 'std_phase2',
@@ -425,10 +424,7 @@ def features_extraction_of_data(path, filename):
     skew_sum_abs = skew(vsum_abs)
     skew_sum2 = skew(vsum2)
     min_sum = np.min(vsum)
-    min_sum_abs = np.min(vsum_abs)
     min_sum2 = np.min(vsum2)
-    max_sum = np.max(vsum)
-    max_sum_abs = np.max(vsum_abs)
     max_sum2 = np.max(vsum2)
     
     cont = 0.0
@@ -491,15 +487,13 @@ def features_extraction_of_data(path, filename):
     df_sum_abs.to_csv(os.path.join('..', 'data', 'instances-features', 'soma_abs_{}'.format(filename)), 
                       index=False, header=False, index_label=False)
     
-    header = '{};' * 41 + '{}'
+    header = '{};' * 38 + '{}'
     print(header.format(filename, mean_sum, mean_sum_abs, mean_sum2,
                         rms_sum, rms_sum_abs, rms_sum2, 
                         std_sum, std_sum_abs, std_sum2,
                         kurtosis_sum, kurtosis_sum_abs, kurtosis_sum2,
                         skew_sum, skew_sum_abs, skew_sum2,
-                        min_sum, min_sum_abs, min_sum2,
-                        max_sum, max_sum_abs, max_sum2,
-                        intensity, cont,
+                        min_sum, min_sum2, max_sum2, intensity, cont,
                         intensity_quad, cont_quad,
                         rms_phase0, rms_phase1, rms_phase2,
                         std_phase0, std_phase1, std_phase2,
@@ -525,10 +519,7 @@ def features_extraction_of_data(path, filename):
     #print('skew_sum_abs; {}'.format(skew_sum_abs))
     #print('skew_sum_quad; {}'.format(skew_sum2))
     #print('min_sum; {}'.format(min_sum))
-    #print('min_sum_abs; {}'.format(min_sum_abs))
     #print('min_sum_quad; {}'.format(min_sum2))
-    #print('max_sum; {}'.format(max_sum))
-    #print('max_sum_abs; {}'.format(max_sum_abs))
     #print('max_sum_quad; {}'.format(max_sum2))
     #print('intensidade_sum; {}'.format(intensidade))
     #print('cont_sum; {}'.format(cont))

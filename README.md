@@ -36,7 +36,7 @@ O enunciado completo do problema pode ser encontrado no [arquivo](./docs/prova_p
 
 ## Dataset
 
-Para executar o projeto é necessário baixar o dataset no [link](https://drive.google.com/u/0/uc?id=17LPP_ZZprHIG3R2f0Vhg5CyfFZOMvlia&export=download) e colocar o arquivo (`database.csv`) na pasta [[data](./data/)]. 
+Para executar o projeto é necessário baixar o dataset no [link](https://drive.google.com/u/0/uc?id=17LPP_ZZprHIG3R2f0Vhg5CyfFZOMvlia&export=download) e colocar o arquivo (`database.csv`) na pasta [data](./data/). 
 
 :warning: **Nota:** O arquivo `database.csv` possui 1.2 GB, assim não foi disponibilizado no github. 
 
